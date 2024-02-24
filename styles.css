@@ -1,7 +1,8 @@
 :root {
     --main-font: Montserrat, sans-serif;
     --button-font: Nunito, sans-serif;
-    --brend-color: #156963;
+    --brand-color: rgb(21, 105, 99, 1);
+    --brand-color-shadow: rgb(21, 105, 99, 0.3);
 }
 
 * {
@@ -9,7 +10,6 @@
     margin: 0;
     padding: 0;
     transition: .2s all ease-in-out;
-    font-family: sans-serif;
 }
 
 a {
@@ -28,7 +28,7 @@ img {
 }
 
  svg path[fill="#156963"] {
-    fill: var(--brend-color);
+    fill: var(--brand-color);
  }
 
 .welcome {
@@ -57,18 +57,19 @@ img {
 
 .header__signup {
     padding: 8px 30px;
-    color: var(--brend-color);
+    color: var(--brand-color);
+    border: 2px solid transparent;
 }
 
 .header__signup:hover {
     transform: scale(1.05);
-    border: 2px solid var(--brend-color);
+    border: 2px solid var(--brand-color-shadow);
 }
 
 .header__signin {
     padding: 8px 33px;
     color: #fff;
-    background: var(--brend-color);
+    background: var(--brand-color);
 }
 
 .header__signin:hover {
@@ -87,7 +88,7 @@ img {
     font-weight: 500;
     font-size: 68px;
     text-align: center;
-    color: var(--brend-color);
+    color: var(--brand-color);
     margin-bottom: 24px;
 }
 
@@ -108,7 +109,6 @@ img {
 }
 
 .profit {
-    /* max-width: 1168px; */
     display: flex;
     gap: 32px;
     flex-wrap: wrap;
@@ -126,7 +126,7 @@ img {
 
 .profit__item:hover {
     transform: scale(1.02);
-    box-shadow: 0px 0px 5px var(--brend-color);
+    box-shadow: 0px 0px 15px 0px var(--brand-color-shadow);
 }
 
 .profit__title {
@@ -141,7 +141,7 @@ img {
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
-    color: var(--brend-color);
+    color: var(--brand-color);
 }
 
 .profit__desc {
@@ -190,7 +190,7 @@ img {
 
 .featured__plant:hover {
     transform: scale(1.03);
-    box-shadow: 0px 0px 5px var(--brend-color);
+    box-shadow: 0px 0px 15px var(--brand-color-shadow);
 }
 
 .featured__image {
@@ -246,13 +246,14 @@ img {
     line-height: 143%;
     text-align: center;
     color: #fafefe;
-    border: 1px solid var(--brend-color);
+    border: 1px solid var(--brand-color);
     padding: 10px 42px;
-    background: var(--brend-color);
+    background: var(--brand-color);
 }
 
 .shop__button:hover {
-    background: #000;
+    background: rgb(4, 40, 49);
+    transform: scale(1.02);
 }
 
 .shop__image {
@@ -303,7 +304,10 @@ img {
     }
 }
 
-@media screen and (max-width: 592px) {
+@media screen and (max-width: 576px) {
+    .welcome {
+        padding: 30px 40px 0;
+    }
     .header__signup, .header__signin {
         padding: 8px 14px;
     }
@@ -316,6 +320,9 @@ img {
     }
     .welcome__desc {
         font-size: 15px;
+    }
+    .main {
+        padding: 0 40px 30px 40px;
     }
     .profit__item {
         flex: 0 1 100%;
@@ -338,11 +345,13 @@ img {
     }
     .shop__info {
         text-align: center;
+        margin-top: 30px;
         margin-bottom: 30px;
         margin-inline: auto;
     }
     .shop__invite {
         font-size: 30px;
+        padding: 0 5px;
     }
 }
 
