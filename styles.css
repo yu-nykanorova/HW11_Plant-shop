@@ -1,15 +1,16 @@
 :root {
     --main-font: Montserrat, sans-serif;
     --button-font: Nunito, sans-serif;
-    --brand-color: rgb(21, 105, 99, 1);
-    --brand-color-shadow: rgb(21, 105, 99, 0.3);
+    --brand-color: rgba(21, 105, 99, 1);
+    --brand-color-shadow: rgba(21, 105, 99, 0.3);
+    --transition: .3s all ease-in-out;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: .2s all ease-in-out;
+    transition: var(--transition);
 }
 
 a {
@@ -41,8 +42,12 @@ img {
     align-items: center;
 }
 
+.header__logo {
+    transition: var(--transition);
+}
+
 .header__logo:hover {
-    transform: scale(1.5);
+    transform: scale(1.4);
 }
 
 .header__buttons {
@@ -259,6 +264,11 @@ img {
 .shop__image {
     display: flex;
     align-items: flex-end;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 1200px) {
+
 }
 
 @media screen and (max-width: 992px) {
@@ -271,11 +281,16 @@ img {
     }
     .shop__info {
         max-width: 430px;
-        margin-top: 75px;
-        margin-bottom: 75px;
+        margin: 55px 0 55px 65px; 
     }
     .shop__invite {
         font-size: 36px;
+    }
+    .shop__image {
+        flex-shrink: 0.2;
+    }
+    .shop__image img {
+        object-fit: cover;
     }
 }
 
@@ -300,7 +315,10 @@ img {
         margin-left: 40px;
     }
     .shop__invite {
-        font-size: 28px;
+        font-size: 26px;
+    }
+    .shop__button {
+        padding: 8px 30px;
     }
 }
 
@@ -345,8 +363,8 @@ img {
     }
     .shop__info {
         text-align: center;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-top: 40px;
+        margin-bottom: 0;
         margin-inline: auto;
     }
     .shop__invite {
